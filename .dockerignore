@@ -1,0 +1,11 @@
+# 容器构建时排除，避免把本地大依赖/构建产物拷进镜像
+node_modules
+client/node_modules
+server/node_modules
+client/dist
+.git
+.gitignore
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db

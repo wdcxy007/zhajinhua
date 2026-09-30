@@ -1,0 +1,18 @@
+{
+  "name": "zhajinhua",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "炸金花（ZhaJinHua）游戏 —— 共享逻辑与测试。type=module 使 Node 22 --experimental-strip-types 能直接转译 .ts（shared/、tests/、server/src/game/ 均在其作用域内）。",
+  "scripts": {
+    "test": "node --experimental-transform-types --experimental-loader ./tests/ts-resolver.mjs tests/handEvaluator.test.ts && node --experimental-transform-types --experimental-loader ./tests/ts-resolver.mjs tests/engine.test.ts && node --experimental-transform-types --experimental-loader ./tests/ts-resolver.mjs tests/bot.test.ts",
+    "test:vitest": "vitest run",
+    "build:client": "npm --prefix client install && npm --prefix client run build",
+    "start:server": "npm --prefix server install && npm --prefix server start",
+    "start": "npm run build:client && npm run start:server"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vitest": "^2.0.0"
+  }
+}
